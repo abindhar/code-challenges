@@ -24,28 +24,27 @@ public class productExceptSelf {
         return ans;
 
     }
+
     public int[] nonOptimal(int[] nums) {
-        // Create two tmp arrays to hold left accumulate and right accumulated products
+        // Create two temp arrays such that the ans array is simply
+        // ans[i] = left[i]*right[i]
         int n = nums.length;
         if (n==1) return nums;
         int[] left = new int[n];
         int[] right = new int[n];
         int[] ans = new int[n];
-        int prod = 1;
+        left[0] = 1;
+        for (int i=1; i<n; i++){
+            // Accumulate product
+            left[i] = nums[i-1] * left[i-1];
+        }
+        right[n-1] = 1;
+        for (int j=n-2; j>=0; j--){
+            right[j] = nums[j+1] * right[j+1];
+        }
         for (int i=0; i<n; i++){
-            prod *= nums[i];
-            left[i] = prod;
+            ans[i] = left[i] * right[i];
         }
-        prod = 1;
-        for (int j=n-1; j>=0; j--){
-            prod *= nums[j];
-            right[j] = prod;
-        }
-        ans[0] = right[1];
-        for (int i=1; i<n-1; i++){
-            ans[i] = left[i-1] * right[i+1];
-        }
-        ans[n-1] = left[n-2];
         return ans;
     }
 }
