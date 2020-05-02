@@ -1,7 +1,8 @@
 public class threeSumSmaller {
     // Leet 259
     public int solution(int[] nums, int target) {
-        // Major hint is O(n^2) time, Sort + Two pointer should work
+        // Major hint is O(n^2) runtime O(1) space
+        // Sort + Two pointer + Special Trick to count number of triplets
         // [-2,-1,0,1,2,3] target=0
         // [-2,0,1,3] target=4
         int n = nums.length;
