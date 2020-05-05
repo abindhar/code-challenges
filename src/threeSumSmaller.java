@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class threeSumSmaller {
     // Leet 259
     public int solution(int[] nums, int target) {
@@ -23,5 +25,4 @@ public class threeSumSmaller {
         }
         return ans;
     }
-}
 }

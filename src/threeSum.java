@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.*;
 
 public class threeSum {
     public List<List<Integer>> threeSum(int[] nums) {
