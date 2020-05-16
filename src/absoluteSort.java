@@ -3,6 +3,9 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class absoluteSort {
+    /*Sort based on absolute value
+    [-4,2,-2,3] => [-2,2,3,4]
+    */
     class AbsSort implements Comparator<Integer> {
         public int compare(Integer a, Integer b){
             if (Math.abs(a) == Math.abs(b)){
@@ -21,10 +24,10 @@ public class absoluteSort {
         }
         // Create a custom Sorting object
         AbsSort cmp = new AbsSort();
-        // Custom sorting order
+        // Sort based on custom comparator
         Arrays.sort(arrObjs, cmp);
-        // Reverse order based on your comparator?
-        //Arrays.sort(arrObjs, Collections.reverseOrder(cmp));
+        // Reverse order based on your comparator
+        // Arrays.sort(arrObjs, Collections.reverseOrder(cmp));
         return arrObjs;
     }
     public static void main(String[] args){
