@@ -1,5 +1,4 @@
 public class productExceptSelf {
-    //
     public int[] solution(int[] nums) {
         //return nonOptimal(nums);
 
