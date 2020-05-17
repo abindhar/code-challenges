@@ -1,6 +1,6 @@
 public class searchRange {
     // #34 : Find First and Last Position of Element in Sorted Array
-    public int[] searchRange(int[] nums, int target) {
+    public int[] Solution(int[] nums, int target) {
         int[] ans = new int[2];
         int lo = 0, hi = nums.length - 1;
         ans[0] = searchFirst(nums, target, lo, hi);
