@@ -2,12 +2,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class summaryRanges {
-    public List<String> getSummaryRanges(int[] nums) {
+    public List<String> Solution(int[] nums) {
         List<String> ans = new ArrayList<>();
         if (nums == null || nums.length==0)
             return ans;
         int left = 0; // pointer to start of current range
         for (int i=0; i<nums.length-1; i++){
+            /*
+            // If duplicates were allowed we could add the following to deal with them
+            if (nums[i+1]==nums[i])
+                continue;
+            */
+
             if (! (nums[i+1]==nums[i]+1)){
                 ans.add(formRange(nums[left], nums[i]));
                 left = i+1;
